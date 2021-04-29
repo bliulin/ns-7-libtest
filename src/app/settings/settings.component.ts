@@ -8,6 +8,11 @@ import { Application } from "@nativescript/core";
 })
 export class SettingsComponent implements OnInit {
 
+    public movie = {
+        title: 'Inglorious bastards',
+        description: 'WW2 remake'
+    };
+
     constructor() {
         // Use the component constructor to inject providers.
     }

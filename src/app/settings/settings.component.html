@@ -1,10 +1,10 @@
 <ActionBar>
-    <!-- 
+    <!--
     Use the NavigationButton as a side-drawer button in Android
     because ActionItems are shown on the right side of the ActionBar
     -->
     <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
-    <!-- 
+    <!--
     Use the ActionItem for IOS with position set to left. Using the
     NavigationButton as a side-drawer button in iOS is not possible,
     because its function is to always navigate back in the application.
@@ -17,5 +17,57 @@
 
 <GridLayout class="page__content">
     <Label class="page__content-icon fas" text="&#xf013;"></Label>
-    <Label class="page__content-placeholder" text="<!-- Page content goes here -->"></Label>
+    <Label class="page__content-placeholder" text="<!-- Box shadow test -->"></Label>
+
+    <GridLayout
+      rows="*"
+      columns="*"
+      style="box-shadow: 0 0 5px rgba(0, 0, 0, 0.8)"
+    >
+      <!-- fade layer -->
+      <ContentView
+        backgroundColor="#666666"
+        opacity="0.7"
+        row="0"
+        col="0"
+        height="100%"
+        width="100%"
+      ></ContentView>
+
+      <!-- content -->
+      <StackLayout
+        row="0"
+        col="0"
+        verticalAlignment="bottom"
+        horizontalAlignment="left"
+        width="75%"
+      >
+        <Label
+          [text]="movie.title | uppercase"
+          class="bold"
+          fontSize="20"
+          color="#fff"
+          style="text-shadow: 1px 1px 1px rgba(101, 173, 241, 0.8)"
+        ></Label>
+        <Label
+          [text]="movie.description"
+          fontSize="15"
+          color="#ddd"
+          marginTop="7"
+          textWrap="true"
+        ></Label>
+
+        <Button
+          text="PLAY NOW"
+          marginTop="20"
+          horizontalAlignment="left"
+          class="bg-color-primary bold glow-shadow"
+          padding="15 0"
+          width="150"
+          color="#fff"
+          fontSize="14"
+          style="box-shadow: 0 0 25px rgba(0,0,0,.8);"
+        ></Button>
+      </StackLayout>
+    </GridLayout>
 </GridLayout>

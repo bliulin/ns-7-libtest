@@ -1,32 +1,57 @@
 <ActionBar>
-    <!--
+  <!--
     Use the NavigationButton as a side-drawer button in Android
     because ActionItems are shown on the right side of the ActionBar
     -->
-    <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
-    <!--
+  <NavigationButton
+    ios:visibility="collapsed"
+    icon="res://menu"
+    (tap)="onDrawerButtonTap()"
+  ></NavigationButton>
+  <!--
     Use the ActionItem for IOS with position set to left. Using the
     NavigationButton as a side-drawer button in iOS is not possible,
     because its function is to always navigate back in the application.
     -->
-    <ActionItem icon="res://menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
-        ios.position="left">
-    </ActionItem>
-    <Label text="Home"></Label>
+  <ActionItem
+    icon="res://menu"
+    android:visibility="collapsed"
+    (tap)="onDrawerButtonTap()"
+    ios.position="left"
+  >
+  </ActionItem>
+  <Label text="Home"></Label>
 </ActionBar>
 
 <StackLayout class="page__content">
-    <Label class="page__content-icon fas" text="&#xf015;"></Label>
-    <Label class="page__content-placeholder" text="<!-- Test libraries using Nativescript 7 -->"></Label>
+  <Label
+    text="<!-- Test libraries using Nativescript 7 -->"
+  ></Label>
 
-    <Button style="color: red" (tap)="onExitTapped()" text="Exit app"></Button>
+  <Button style="color: red" (tap)="onExitTapped()" text="Exit app"></Button>
 
-    <Button style="color: black" (tap)="onShowToastMessage()" text="Show toast message" style="margin-bottom: 20;"></Button>
+  <Button
+    style="color: black"
+    (tap)="onShowToastMessage()"
+    text="Show toast message"
+    style="margin-bottom: 20"
+  ></Button>
 
-    <!-- <SVGImage src="https://dev.w3.org/SVG/tools/svgweb/samples/svg-files/DroidSerif-Bold.svg" width="256" height="256"></SVGImage> -->
+  <Button
+    text="PLAY NOW"
+    marginTop="20"
+    horizontalAlignment="left"
+    class="bg-color-primary bold glow-shadow"
+    padding="15 0"
+    width="150"
+    color="#fff"
+    fontSize="14"
+    style="color:black; box-shadow: 0 0 25px rgba(0, 0, 0, 0.8)"
+  ></Button>
 
-    <!-- <CanvasView width="100" height="100" (draw)="draw($event)"></CanvasView> -->
+  <!-- <SVGImage src="https://dev.w3.org/SVG/tools/svgweb/samples/svg-files/DroidSerif-Bold.svg" width="256" height="256"></SVGImage> -->
 
-    <Highcharts options="{{chartOptionsString}}"></Highcharts>
+  <!-- <CanvasView width="100" height="100" (draw)="draw($event)"></CanvasView> -->
 
-  </StackLayout>
+  <Highcharts options="{{ chartOptionsString }}"></Highcharts>
+</StackLayout>
